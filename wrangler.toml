@@ -1,0 +1,21 @@
+name = "ii-workers"
+type = "javascript"
+zone_id = ""
+account_id = "9d457b7afe76f79d16ba2f4cb8530f05"
+route = ""
+workers_dev = true
+
+[build]
+command = "npm install && npm run build"
+[build.upload]
+format = "service-worker"
+
+[env.staging]
+name = "ii-worker-staging"
+vars = { ENVIRONMENT = "staging" }
+route = "https://staging.indiainvestments.wiki/*"
+
+[env.production]
+name = "ii-worker"
+vars = { ENVIRONMENT = "production" }
+routes = [  "https://indiainvestments.wiki/*",]
