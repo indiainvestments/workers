@@ -1,8 +1,8 @@
 const redirectHttpCode = 301
 const redirectMap = new Map([
-  ['/discord', '${{ secrets.BOT_GITHUB_TOKEN }}'],
-  ['/reddit', '${{ secrets.BOT_GITHUB_TOKEN }}'],
-  ['/youtube', '${{ secrets.BOT_GITHUB_TOKEN }}'],
+  ['/discord', '${process.env.DISCORD}'],
+  ['/reddit', '${process.env.REDDIT}'],
+  ['/youtube', '${process.env.YOUTUBE}'],
 ])
 
 export async function handleRequest(request: Request): Promise<Response> {
