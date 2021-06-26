@@ -8,7 +8,6 @@ const redirectMap = new Map([
 export async function handleRequest(request: Request): Promise<Response> {
   const url = new URL(request.url)
   const { pathname } = url
-
   const targetUrl = redirectMap.get(pathname)
   if (targetUrl) {
     return Response.redirect(targetUrl, redirectHttpCode)
