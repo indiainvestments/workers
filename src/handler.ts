@@ -1,8 +1,8 @@
 const redirectHttpCode = 301
 const redirectMap = new Map([
-  ['/discord', '${ DISCORD}'],
-  ['/reddit', '${ REDDIT}'],
-  ['/youtube', '${ YOUTUBE}'],
+  ['/discord', '${ DISCORD_INVITE }'],
+  ['/reddit', '${ REDDIT_LINK }'],
+  ['/youtube', '${ YOUTUBE_CHANNEL }'],
 ])
 
 export async function handleRequest(request: Request): Promise<Response> {
