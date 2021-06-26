@@ -16,7 +16,7 @@ jobs:
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'staging'
-          postcommands: echo "$DISCORD_SERVER" | wrangler secret put DISCORD_INVITE && echo "$SUBREDDIT_LINK" | wrangler secret put REDDIT_LINK && echo "$YOUTUBE_CHANNEL" | wrangler secret put YOUTUBE_CHANNEL
+          postCommands: echo "$DISCORD_SERVER" | wrangler secret put DISCORD_INVITE && echo "$SUBREDDIT_LINK" | wrangler secret put REDDIT_LINK && echo "$YOUTUBE_CHANNEL" | wrangler secret put YOUTUBE_CHANNEL
         env:
           DISCORD_INVITE: ${{ secrets.DISCORD_SERVER }}
           SUBREDDIT_LINK: ${{ secrets.SUBREDDIT_LINK }}
