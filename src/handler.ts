@@ -1,8 +1,8 @@
 const redirectHttpCode = 301
 const redirectMap = new Map([
-  ['/discord', 'https://discord.com/invite/hqBNg4u'],
-  ['/reddit', 'https://reddit.com/r/IndiaInvestments'],
-  ['/youtube', 'https://www.youtube.com/channel/UC324pobafJz5J_KdABVh4Tw'],
+  ['/discord', '${process.env.DISCORD}'],
+  ['/reddit', '${process.env.REDDIT}'],
+  ['/youtube', '${process.env.YOUTUBE}'],
 ])
 
 export async function handleRequest(request: Request): Promise<Response> {
