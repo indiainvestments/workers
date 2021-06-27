@@ -1,3 +1,9 @@
+declare global {
+  const DISCORD_INVITE: string;
+  const REDDIT_LINK: string;
+  const YOUTUBE_CHANNEL: string;
+}
+
 const redirectHttpCode = 301
 const redirectMap = new Map([
   ['/discord', `${ DISCORD_INVITE }`],
