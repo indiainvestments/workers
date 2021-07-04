@@ -12,11 +12,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Stage
-        uses: cloudflare/wrangler-action@1.2.0
+        uses: cloudflare/wrangler-action@1.3.0
         with:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'staging'
-          postCommands: echo "$DISCORD_SERVER" | wrangler secret put DISCORD_INVITE && echo "$SUBREDDIT_LINK" | wrangler secret put REDDIT_LINK && echo "$YOUTUBE_CHANNEL" | wrangler secret put YOUTUBE_CHANNEL
+          secrets: |
+            DISCORD_INVITE
+            SUBREDDIT_LINK
+            YOUTUBE_CHANNEL
         env:
           DISCORD_INVITE: ${{ secrets.DISCORD_SERVER }}
           SUBREDDIT_LINK: ${{ secrets.SUBREDDIT_LINK }}
