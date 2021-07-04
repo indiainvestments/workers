@@ -4,9 +4,9 @@ export async function updateMetadata(request: Request): Promise<Response> {
   const url = new URL(request.url)
   const urlHash = url.hash
   if (urlHash === '') {
-    return fetch(url.href)
+    return fetch(request)
   }
-  const res = await fetch(url.href)
+  const res = await fetch(request)
   const clonedResponse = res.clone()
   const body = await res.text()
   const $ = cheerio.load(body)
