@@ -1,10 +1,16 @@
 import { updateMetadata } from './metadata'
 
+declare global {
+  const DISCORD_INVITE: string;
+  const REDDIT_LINK: string;
+  const YOUTUBE_CHANNEL: string;
+}
+
 const redirectHttpCode = 301
 const redirectMap = new Map([
-  ['/discord', `${process.env.DISCORD}`],
-  ['/reddit', `${process.env.REDDIT}`],
-  ['/youtube', `${process.env.YOUTUBE}`],
+  ['/discord', DISCORD_INVITE],
+  ['/reddit', REDDIT_LINK],
+  ['/youtube', YOUTUBE_CHANNEL],
 ])
 
 export async function handleRequest(request: Request): Promise<Response> {
