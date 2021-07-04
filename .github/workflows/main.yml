@@ -17,10 +17,10 @@ jobs:
           apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: 'staging'
           secrets: |
-            DISCORD_INVITE
+            DISCORD_SERVER
             SUBREDDIT_LINK
             YOUTUBE_CHANNEL
         env:
-          DISCORD_INVITE: ${{ secrets.DISCORD_SERVER }}
+          DISCORD_SERVER: ${{ secrets.DISCORD_SERVER }}
           SUBREDDIT_LINK: ${{ secrets.SUBREDDIT_LINK }}
           YOUTUBE_CHANNEL: ${{ secrets.YOUTUBE_CHANNEL }}
