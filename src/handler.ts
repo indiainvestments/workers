@@ -2,7 +2,7 @@ import { updateMetadata } from './metadata'
 
 const redirectHttpCode = 301
 const redirectMap = new Map([
-  ['/discord', DISCORD_SERVER],
+  ['/discord', DISCORD_INVITE],
   ['/reddit', SUBREDDIT_LINK],
   ['/youtube', YOUTUBE_CHANNEL],
 ])
