@@ -9,11 +9,13 @@
     "preserveConstEnums": true,
     "moduleResolution": "node",
     "sourceMap": true,
+    "noImplicitAny": false,
     "esModuleInterop": true,
     "types": [
       "@cloudflare/workers-types",
       "@types/jest",
-      "@types/service-worker-mock"
+      "@types/service-worker-mock",
+      "@types/node"
     ]
   },
   "include": ["src"],

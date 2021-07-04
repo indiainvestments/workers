@@ -1,3 +1,5 @@
+import { updateMetadata } from './metadata'
+
 const redirectHttpCode = 301
 const redirectMap = new Map([
   ['/discord', '${process.env.DISCORD}'],
@@ -14,5 +16,5 @@ export async function handleRequest(request: Request): Promise<Response> {
     return Response.redirect(targetUrl, redirectHttpCode)
   }
 
-  return fetch(request)
+  return updateMetadata(request)
 }
