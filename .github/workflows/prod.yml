@@ -1,0 +1,26 @@
+name: Production
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    name: Deploy
+    steps:
+      - uses: actions/checkout@v2
+      - name: Stage
+        uses: cloudflare/wrangler-action@1.3.0
+        with:
+          apiToken: ${{ secrets.CF_API_TOKEN }}
+          environment: 'production'
+          secrets: |
+            DISCORD_SERVER
+            SUBREDDIT_LINK
+            YOUTUBE_CHANNEL
+        env:
+          DISCORD_SERVER: ${{ secrets.DISCORD_SERVER }}
+          SUBREDDIT_LINK: ${{ secrets.SUBREDDIT_LINK }}
+          YOUTUBE_CHANNEL: ${{ secrets.YOUTUBE_CHANNEL }}
