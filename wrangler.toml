@@ -1,6 +1,6 @@
-name = "ii-workers"
+name = "wiki-worker-dev"
 type = "javascript"
-zone_id = ""
+zone_id = "2b45e3853e1b35484d323689da5400d7"
 account_id = "9d457b7afe76f79d16ba2f4cb8530f05"
 route = ""
 workers_dev = true
@@ -11,11 +11,11 @@ command = "npm install && npm run build"
 format = "service-worker"
 
 [env.staging]
-name = "ii-worker-staging"
+name = "wiki-worker-staging"
 vars = { ENVIRONMENT = "staging" }
-route = "https://staging.indiainvestments.wiki/*"
+route = "staging.indiainvestments.wiki/*"
 
 [env.production]
-name = "ii-worker"
+name = "wiki-worker-prod"
 vars = { ENVIRONMENT = "production" }
-routes = [  "https://indiainvestments.wiki/*",]
+route = "indiainvestments.wiki/*"
